@@ -1,0 +1,6 @@
+2025-04-05 01:41:35,574 - INFO - Log configurado. Archivo: c:\Users\JonathanGiraldoDiazO\Desktop\Universidad\Maestria en Inteligencia Artificial y Ciencia de Datos\ETL\airflow\logs\etl_eeuu_process_20250405_014135.log
+2025-04-05 01:41:35,574 - INFO - Directorio del notebook: c:\Users\JonathanGiraldoDiazO\Desktop\Universidad\Maestria en Inteligencia Artificial y Ciencia de Datos\ETL\airflow\notebooks
+2025-04-05 01:41:35,575 - INFO - Directorio padre: c:\Users\JonathanGiraldoDiazO\Desktop\Universidad\Maestria en Inteligencia Artificial y Ciencia de Datos\ETL\airflow
+2025-04-05 01:41:35,577 - INFO - Inicio del proceso ETL - Cáncer de Mama
+2025-04-05 01:41:35,586 - INFO - Iniciando extracción de datos desde Azure Data Lake
+2025-04-05 01:41:35,586 - INFO - Intentando leer datos desde: https://azdletluao.dfs.core.windows.net/uao/etl/datos_EEUU/Breast_Cancer.csv
