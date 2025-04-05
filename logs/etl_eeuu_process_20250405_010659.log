@@ -161,3 +161,21 @@ Name: proportion, dtype: float64
 2025-04-05 01:07:08,363 - INFO - DataFrame guardado en BreastCancer.stg_datos_eeuu. Tiempo: 4.59 segundos. Filas: 4024
 2025-04-05 01:07:08,452 - INFO - Esquema BreastCancer verificado/creado
 2025-04-05 01:07:08,528 - INFO - Tabla BreastCancer.X_train eliminada si existía
+2025-04-05 01:07:17,153 - INFO - DataFrame guardado en BreastCancer.X_train. Tiempo: 8.54 segundos. Filas: 2816
+2025-04-05 01:07:17,233 - INFO - Esquema BreastCancer verificado/creado
+2025-04-05 01:07:17,315 - INFO - Tabla BreastCancer.y_train eliminada si existía
+2025-04-05 01:07:21,573 - INFO - DataFrame guardado en BreastCancer.y_train. Tiempo: 4.17 segundos. Filas: 2816
+2025-04-05 01:07:21,654 - INFO - Esquema BreastCancer verificado/creado
+2025-04-05 01:07:21,737 - INFO - Tabla BreastCancer.X_test eliminada si existía
+2025-04-05 01:07:25,812 - INFO - DataFrame guardado en BreastCancer.X_test. Tiempo: 3.99 segundos. Filas: 603
+2025-04-05 01:07:25,895 - INFO - Esquema BreastCancer verificado/creado
+2025-04-05 01:07:25,980 - INFO - Tabla BreastCancer.y_test eliminada si existía
+2025-04-05 01:07:28,497 - INFO - DataFrame guardado en BreastCancer.y_test. Tiempo: 2.43 segundos. Filas: 603
+2025-04-05 01:07:28,584 - INFO - Esquema BreastCancer verificado/creado
+2025-04-05 01:07:28,665 - INFO - Tabla BreastCancer.X_val eliminada si existía
+2025-04-05 01:07:32,731 - INFO - DataFrame guardado en BreastCancer.X_val. Tiempo: 3.98 segundos. Filas: 604
+2025-04-05 01:07:32,820 - INFO - Esquema BreastCancer verificado/creado
+2025-04-05 01:07:32,901 - INFO - Tabla BreastCancer.y_val eliminada si existía
+2025-04-05 01:07:35,365 - INFO - DataFrame guardado en BreastCancer.y_val. Tiempo: 2.38 segundos. Filas: 604
+2025-04-05 01:07:35,366 - INFO - Todos los DataFrames se han guardado exitosamente en Azure SQL Database
+2025-04-05 01:07:35,367 - INFO - Proceso ETL completado
