@@ -1,2 +1,247 @@
 2025-04-05 01:42:39,612 - INFO - Inicio de sesión de logs. Archivo: c:\Users\JonathanGiraldoDiazO\Desktop\Universidad\Maestria en Inteligencia Artificial y Ciencia de Datos\ETL\airflow\logs\etl_colombia_process_20250405_014239.log
 2025-04-05 01:42:39,612 - INFO - Inicio del proceso ETL - Datos de Cáncer
+2025-04-05 01:42:40,920 - INFO - Iniciando extracción de datos desde Azure Data Lake
+2025-04-05 01:42:40,921 - INFO - Leyendo datos desde: https://azdletluao.dfs.core.windows.net/uao/etl/datos_colombia/Cancer-de-mama-datos-abiertos.csv?sp=racwdlmeop&st=2025-03-17T17:32:07Z&se=2026-01-01T01:32:07Z&spr=https&sv=2022-11-02&sr=c&sig=oW%2FVy%2Fe8ursHd%2FrkBli26wRGclIfhGsSg7IbgrahYz4%3D
+2025-04-05 01:42:41,549 - INFO - Datos cargados exitosamente. Dimensiones: (237, 37)
+2025-04-05 01:42:41,566 - INFO - Visualización de primeras filas del dataset
+2025-04-05 01:42:41,601 - INFO - Iniciando Exploración de Datos (EDA)
+2025-04-05 01:42:41,603 - INFO - Estructura del DataFrame: (237, 37)
+2025-04-05 01:42:41,605 - INFO - Tipos de datos:
+codigo_sspm            int64
+fec_not               object
+cod_divipola           int64
+ciudad                object
+dpto                  object
+edad_                  int64
+sexo_                 object
+tip_ss_               object
+per_etn_              object
+fec_con_              object
+ini_sin_              object
+fec_pro_co            object
+fec_res_bi            object
+res_biops9            object
+grad_histo            object
+fecha_corte           object
+fecha_reporte_web     object
+Unnamed: 17          float64
+Unnamed: 18          float64
+Unnamed: 19          float64
+Unnamed: 20          float64
+Unnamed: 21          float64
+Unnamed: 22          float64
+Unnamed: 23          float64
+Unnamed: 24          float64
+Unnamed: 25          float64
+Unnamed: 26          float64
+Unnamed: 27          float64
+Unnamed: 28          float64
+Unnamed: 29          float64
+Unnamed: 30          float64
+Unnamed: 31          float64
+Unnamed: 32          float64
+Unnamed: 33          float64
+Unnamed: 34          float64
+Unnamed: 35          float64
+Unnamed: 36          float64
+dtype: object
+2025-04-05 01:42:41,608 - INFO - Resumen de valores faltantes:
+                   Count         %
+codigo_sspm            0  0.000000
+fec_not                0  0.000000
+cod_divipola           0  0.000000
+ciudad                 0  0.000000
+dpto                   0  0.000000
+edad_                  0  0.000000
+sexo_                  0  0.000000
+tip_ss_                0  0.000000
+per_etn_               2  0.843882
+fec_con_               0  0.000000
+ini_sin_               0  0.000000
+fec_pro_co             0  0.000000
+fec_res_bi             0  0.000000
+res_biops9             3  1.265823
+grad_histo             0  0.000000
+fecha_corte            0  0.000000
+fecha_reporte_web      0  0.000000
+2025-04-05 01:42:41,627 - INFO - Estadísticas descriptivas:
+        codigo_sspm      fec_not  cod_divipola ciudad   dpto       edad_     sexo_       tip_ss_ per_etn_     fec_con_    ini_sin_  fec_pro_co   fec_res_bi        res_biops9   grad_histo  fecha_corte fecha_reporte_web
+count    237.000000          237    237.000000    237    237  237.000000       237           237      235          237         237         237          237               234          237          237               237
+unique          NaN           62           NaN      1      1         NaN         2             4        4           95         142         109          103                 2            3            1                 1
+top             NaN  23-ene-2023           NaN   Cali  Valle         NaN  femenino  contributivo     otro  15-feb-2023  1-ene-2023  2-feb-2023  30-dic-2022  carcinoma ductal  infiltrante  27-mar-2023       15-abr-2023
+freq            NaN           15           NaN    237    237         NaN       235           212      230            8           8          13            6               220          154          237               237
+mean     119.000000          NaN  77065.000000    NaN    NaN   59.953586       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+std       68.560193          NaN     68.560193    NaN    NaN   13.856481       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+min        1.000000          NaN  76947.000000    NaN    NaN   23.000000       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+25%       60.000000          NaN  77006.000000    NaN    NaN   50.000000       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+50%      119.000000          NaN  77065.000000    NaN    NaN   60.000000       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+75%      178.000000          NaN  77124.000000    NaN    NaN   68.000000       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+max      237.000000          NaN  77183.000000    NaN    NaN   92.000000       NaN           NaN      NaN          NaN         NaN         NaN          NaN               NaN          NaN          NaN               NaN
+2025-04-05 01:42:41,932 - INFO - Histogramas generados exitosamente
+2025-04-05 01:42:41,945 - INFO - Iniciando limpieza de datos
+2025-04-05 01:42:41,947 - INFO - Nombres de columnas normalizados
+2025-04-05 01:42:41,954 - INFO - Valores únicos en fec_not: ['3-ene-2023' '4-ene-2023' '5-ene-2023' '6-ene-2023' '10-ene-2023'
+ '11-ene-2023' '12-ene-2023' '13-ene-2023' '16-ene-2023' '17-ene-2023'
+ '18-ene-2023' '20-ene-2023' '23-ene-2023' '26-ene-2023' '27-ene-2023'
+ '28-ene-2023' '30-ene-2023' '31-ene-2023' '1-feb-2023' '2-feb-2023'
+ '3-feb-2023' '6-feb-2023' '7-feb-2023' '8-feb-2023' '9-feb-2023'
+ '10-feb-2023' '13-feb-2023' '15-feb-2023' '16-feb-2023' '17-feb-2023'
+ '20-feb-2023' '21-feb-2023' '22-feb-2023' '23-feb-2023' '24-feb-2023'
+ '25-feb-2023' '27-feb-2023' '28-feb-2023' '1-mar-2023' '3-mar-2023'
+ '4-mar-2023' '6-mar-2023' '7-mar-2023' '8-mar-2023' '9-mar-2023'
+ '10-mar-2023' '14-mar-2023' '15-mar-2023' '16-mar-2023' '17-mar-2023'
+ '18-mar-2023' '19-mar-2023' '20-mar-2023' '21-mar-2023' '22-mar-2023'
+ '23-mar-2023' '24-mar-2023' '27-mar-2023' '28-mar-2023' '29-mar-2023'
+ '30-mar-2023' '31-mar-2023']
+2025-04-05 01:42:41,955 - INFO - Valores únicos en ciudad: ['Cali']
+2025-04-05 01:42:41,956 - INFO - Valores únicos en dpto: ['Valle']
+2025-04-05 01:42:41,956 - INFO - Valores únicos en sexo_: ['femenino' 'masculino']
+2025-04-05 01:42:41,957 - INFO - Valores únicos en tip_ss_: ['contributivo' 'subsidiado' 'excepcion' 'no afiliado']
+2025-04-05 01:42:41,959 - INFO - Valores únicos en per_etn_: ['otro' 'afrocolombiano' 'raizal ' nan 'rom ']
+2025-04-05 01:42:41,959 - INFO - Valores únicos en fec_con_: ['2-ene-2023' '24-nov-2022' '10-dic-2022' '6-ene-2023' '3-nov-2022'
+ '10-ene-2023' '12-ene-2023' '12-dic-2022' '21-dic-2022' '9-dic-2022'
+ '15-dic-2022' '10-nov-2022' '19-ago-2022' '3-feb-2022' '5-ene-2023'
+ '11-ene-2023' '19-dic-2022' '20-dic-2022' '5-dic-2022' '17-ene-2023'
+ '11-nov-2022' '30-nov-2022' '19-ene-2023' '20-ene-2023' '11-oct-2022'
+ '4-ene-2023' '30-dic-2022' '23-ene-2023' '13-ene-2023' '18-ene-2023'
+ '16-ene-2023' '27-ene-2023' '25-ene-2023' '14-ene-2023' '28-ene-2023'
+ '31-ene-2023' '26-ene-2023' '2-feb-2023' '1-feb-2023' '31-oct-2022'
+ '9-nov-2022' '22-nov-2022' '16-nov-2022' '1-dic-2022' '6-dic-2022'
+ '24-ene-2023' '6-feb-2023' '27-dic-2022' '3-feb-2023' '7-feb-2023'
+ '21-ene-2023' '10-feb-2023' '13-feb-2023' '15-feb-2023' '16-feb-2023'
+ '9-feb-2023' '8-feb-2023' '20-feb-2023' '21-feb-2023' '23-feb-2023'
+ '24-feb-2023' '28-feb-2023' '25-feb-2023' '22-feb-2023' '1-mar-2023'
+ '2-mar-2023' '1-sep-2022' '6-mar-2023' '22-ago-2022' '17-feb-2023'
+ '25-abr-2022' '14-feb-2023' '7-mar-2023' '26-may-2022' '26-dic-2022'
+ '14-mar-2023' '8-mar-2023' '3-mar-2023' '4-feb-2023' '15-mar-2023'
+ '18-feb-2023' '9-mar-2023' '21-mar-2023' '22-mar-2023' '17-mar-2023'
+ '16-mar-2023' '23-mar-2023' '24-mar-2023' '25-mar-2023' '27-mar-2023'
+ '28-mar-2023' '29-mar-2023' '30-mar-2023' '31-mar-2023' '10-mar-2023']
+2025-04-05 01:42:41,961 - INFO - Valores únicos en ini_sin_: ['22-nov-2022' '2-nov-2022' '24-oct-2022' '11-nov-2021' '1-oct-2022'
+ '3-oct-2022' '1-ene-2022' '30-nov-2022' '25-nov-2022' '14-dic-2022'
+ '4-sep-2022' '2-dic-2022' '26-oct-2022' '12-jul-2022' '26-ene-2022'
+ '21-feb-2022' '22-dic-2022' '1-abr-2020' '1-dic-2022' '19-nov-2022'
+ '24-nov-2022' '5-dic-2022' '1-nov-2022' '25-oct-2022' '28-oct-2022'
+ '11-ene-2023' '1-jul-2022' '20-sep-2022' '6-ene-2022' '15-oct-2022'
+ '10-sep-2022' '12-oct-2022' '31-oct-2022' '18-nov-2022' '1-sep-2022'
+ '18-oct-2022' '2-ene-2023' '26-sep-2022' '6-sep-2022' '1-nov-2020'
+ '6-ene-2023' '1-ene-2019' '15-dic-2022' '3-ene-2023' '13-may-2020'
+ '23-ene-2023' '9-oct-2022' '10-oct-2022' '12-dic-2022' '17-ene-2023'
+ '16-dic-2022' '29-dic-2022' '19-ene-2023' '7-ene-2023' '1-ene-2023'
+ '25-ago-2022' '9-nov-2022' '22-jul-2022' '10-nov-2022' '23-sep-2022'
+ '28-jun-2022' '16-nov-2022' '5-nov-2022' '19-oct-2022' '21-jul-2022'
+ '20-oct-2022' '27-ago-2022' '20-dic-2022' '31-ene-2023' '18-ene-2023'
+ '17-oct-2022' '7-dic-2022' '13-sep-2022' '26-ene-2023' '3-mar-2022'
+ '9-ene-2022' '13-nov-2022' '20-nov-2022' '20-mar-2022' '3-abr-2022'
+ '14-ene-2023' '1-feb-2023' '2-feb-2023' '15-feb-2023' '9-feb-2023'
+ '16-jul-2022' '13-dic-2021' '21-ago-2022' '19-dic-2022' '25-ene-2023'
+ '12-ene-2023' '16-ene-2023' '1-abr-2022' '1-feb-2021' '13-feb-2020'
+ '16-jun-2022' '10-ene-2023' '1-feb-2022' '21-feb-2023' '26-feb-2023'
+ '14-feb-2023' '4-ago-2022' '27-ene-2023' '24-ene-2023' '9-sep-2022'
+ '2-mar-2022' '17-feb-2023' '1-ene-2021' '26-dic-2022' '2-jul-2022'
+ '10-jun-2022' '15-ago-2022' '23-dic-2022' '10-ene-2022' '7-mar-2023'
+ '10-feb-2022' '28-dic-2022' '4-nov-2022' '1-jun-2022' '22-ene-2023'
+ '1-mar-2022' '27-dic-2022' '8-nov-2022' '30-ene-2023' '16-feb-2023'
+ '4-feb-2023' '22-feb-2023' '30-sep-2022' '21-ene-2023' '27-feb-2023'
+ '17-sep-2022' '8-feb-2023' '17-mar-2023' '16-mar-2023' '25-sep-2022'
+ '18-mar-2022' '24-feb-2023' '3-feb-2023' '1-mar-2023' '21-mar-2023'
+ '30-mar-2023' '12-mar-2022']
+2025-04-05 01:42:41,962 - INFO - Valores únicos en fec_pro_co: ['22-nov-2022' '28-nov-2022' '13-nov-2022' '31-dic-2022' '13-dic-2022'
+ '7-dic-2022' '15-dic-2022' '30-dic-2022' '14-dic-2022' '21-dic-2022'
+ '9-jul-2022' '12-jul-2022' '22-ene-2022' '22-dic-2022' '  -   -'
+ '26-nov-2022' '5-dic-2022' '10-dic-2022' '10-nov-2022' '27-dic-2022'
+ '18-nov-2022' '26-oct-2022' '15-nov-2022' '28-oct-2022' '11-ene-2023'
+ '4-oct-2022' '20-sep-2022' '29-nov-2022' '17-dic-2022' '9-dic-2022'
+ '2-ene-2023' '6-ene-2023' '28-dic-2022' '1-dic-2022' '5-ene-2023'
+ '29-dic-2022' '16-ene-2023' '18-ene-2023' '14-ene-2023' '19-ene-2023'
+ '17-ene-2023' '16-dic-2022' '4-ene-2023' '23-ene-2023' '12-ene-2023'
+ '26-ene-2023' '30-nov-2022' '9-nov-2022' '23-nov-2022' '20-nov-2022'
+ '17-nov-2022' '24-nov-2022' '25-nov-2022' '10-ene-2023' '31-ene-2023'
+ '25-ene-2023' '30-ene-2023' '23-dic-2022' '1-feb-2023' '19-dic-2022'
+ '24-ene-2023' '27-ene-2023' '3-ene-2023' '12-dic-2022' '20-ene-2023'
+ '2-feb-2023' '9-feb-2023' '3-feb-2023' '6-feb-2023' '21-oct-2022'
+ '20-dic-2022' '15-feb-2023' '13-feb-2023' '16-feb-2023' '21-feb-2023'
+ '17-feb-2023' '22-feb-2023' '23-feb-2023' '28-ene-2023' '26-feb-2023'
+ '26-ago-2022' '7-feb-2023' '10-ago-2022' '12-nov-2022' '10-feb-2023'
+ '19-abr-2022' '27-feb-2023' '14-feb-2023' '20-oct-2022' '3-dic-2022'
+ '18-dic-2022' '7-mar-2023' '6-mar-2023' '20-feb-2023' '3-mar-2023'
+ '2-mar-2023' '8-mar-2023' '26-dic-2022' '10-mar-2023' '9-mar-2023'
+ '16-mar-2023' '4-mar-2023' '17-mar-2023' '15-mar-2023' '14-mar-2023'
+ '23-mar-2023' '12-mar-2023' '21-mar-2023' '24-mar-2023']
+2025-04-05 01:42:41,963 - INFO - Valores únicos en fec_res_bi: ['22-nov-2022' '2-dic-2022' '23-nov-2022' '6-dic-2022' '5-ene-2023'
+ '26-dic-2022' '16-dic-2022' '30-dic-2022' '11-ene-2023' '29-dic-2022'
+ '31-dic-2022' '18-jul-2022' '22-jul-2022' '31-ene-2022' '6-ene-2023'
+ '30-nov-2022' '15-dic-2022' '14-dic-2022' '19-dic-2022' '27-nov-2022'
+ '23-dic-2022' '2-ene-2023' '28-nov-2022' '26-oct-2022' '25-nov-2022'
+ '28-oct-2022' '11-oct-2022' '24-dic-2022' '3-ene-2023' '22-dic-2022'
+ '12-ene-2023' '28-dic-2022' '7-dic-2022' '18-ene-2023' '13-ene-2023'
+ '23-ene-2023' '24-ene-2023' '28-ene-2023' '25-ene-2023' '17-ene-2023'
+ '26-ene-2023' '20-ene-2023' '16-ene-2023' '18-nov-2022' '20-dic-2022'
+ '26-nov-2022' '13-dic-2022' '21-ene-2023' '31-ene-2023' '6-feb-2023'
+ '27-dic-2022' '1-feb-2023' '29-nov-2022' '30-ene-2023' '14-ene-2023'
+ '3-feb-2023' '2-feb-2023' '9-feb-2023' '27-ene-2023' '7-feb-2023'
+ '8-feb-2023' '10-feb-2023' '15-feb-2023' '21-oct-2022' '17-feb-2023'
+ '21-feb-2023' '22-feb-2023' '27-feb-2023' '28-feb-2023' '26-feb-2023'
+ '30-ago-2022' '3-mar-2023' '21-ago-2022' '14-feb-2023' '13-feb-2023'
+ '27-abr-2022' '23-feb-2023' '2-nov-2022' '10-ene-2023' '18-dic-2022'
+ '7-mar-2023' '30-abr-2022' '4-ene-2023' '6-mar-2023' '8-mar-2023'
+ '2-mar-2023' '14-mar-2023' '20-feb-2023' '24-feb-2023' '4-mar-2023'
+ '16-mar-2023' '9-mar-2023' '15-mar-2023' '20-mar-2023' '17-mar-2023'
+ '23-mar-2023' '12-mar-2023' '22-mar-2023' '24-mar-2023' '28-mar-2023'
+ '27-mar-2023' '31-mar-2023' '30-mar-2023']
+2025-04-05 01:42:41,963 - INFO - Valores únicos en res_biops9: ['carcinoma ductal' nan 'carcinoma lobulillar']
+2025-04-05 01:42:41,964 - INFO - Valores únicos en grad_histo: ['infiltrante' 'no indicado' 'in-situ']
+2025-04-05 01:42:41,964 - INFO - Valores únicos en fecha_corte: ['27-mar-2023']
+2025-04-05 01:42:41,965 - INFO - Valores únicos en fecha_reporte_web: ['15-abr-2023']
+2025-04-05 01:42:41,968 - INFO - No se encontraron filas duplicadas
+2025-04-05 01:42:41,969 - INFO - Dataset después de limpieza: (237, 17)
+2025-04-05 01:42:41,975 - INFO - Iniciando transformación de datos
+2025-04-05 01:42:42,018 - INFO - Columnas numéricas: ['codigo', 'cod_divipola', 'edad']
+2025-04-05 01:42:42,019 - INFO - Columnas categóricas: ['ciudad', 'departamento', 'sexo', 'tipo_regimen', 'pertence_etnia', 'resultado_biopsia', 'grado_historico']
+2025-04-05 01:42:42,021 - INFO - Imputando 2 valores faltantes en pertence_etnia con la moda: otro
+2025-04-05 01:42:42,021 - INFO - Imputando 3 valores faltantes en resultado_biopsia con la moda: carcinoma ductal
+2025-04-05 01:42:42,023 - INFO - Aplicando codificación one-hot a variables categóricas
+2025-04-05 01:42:42,028 - INFO - Dataset después de codificación: (237, 20)
+2025-04-05 01:42:42,028 - INFO - Escalando variables numéricas
+2025-04-05 01:42:42,032 - INFO - Escalado completado
+2025-04-05 01:42:42,034 - INFO - Iniciando división de datos
+2025-04-05 01:42:42,042 - INFO - Variables independientes (X): (237, 19)
+2025-04-05 01:42:42,042 - INFO - Variable objetivo (y): (237,)
+2025-04-05 01:42:42,042 - INFO - Train: (165, 19), Temp: (72, 19)
+2025-04-05 01:42:42,051 - INFO - Test: (36, 19), Val: (36, 19)
+2025-04-05 01:42:42,052 - INFO - Distribución en train: resultado_biopsia_carcinoma lobulillar
+False    0.939394
+True     0.060606
+Name: proportion, dtype: float64
+2025-04-05 01:42:42,053 - INFO - Distribución en test: resultado_biopsia_carcinoma lobulillar
+False    0.944444
+True     0.055556
+Name: proportion, dtype: float64
+2025-04-05 01:42:42,054 - INFO - Distribución en val: resultado_biopsia_carcinoma lobulillar
+False    0.944444
+True     0.055556
+Name: proportion, dtype: float64
+2025-04-05 01:42:42,063 - INFO - Iniciando carga a Azure SQL
+2025-04-05 01:42:42,082 - INFO - Conexión a Azure SQL configurada
+2025-04-05 01:42:44,066 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:42:44,165 - INFO - Tabla CancerColombia.stg_datos_colombia eliminada (si existía)
+2025-04-05 01:42:50,376 - INFO - Tabla CancerColombia.stg_datos_colombia creada con 237 registros. Tiempo: 6.11s
+2025-04-05 01:42:50,473 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:42:50,568 - INFO - Tabla CancerColombia.X_train eliminada (si existía)
+2025-04-05 01:42:54,656 - INFO - Tabla CancerColombia.X_train creada con 165 registros. Tiempo: 3.99s
+2025-04-05 01:42:54,753 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:42:54,850 - INFO - Tabla CancerColombia.y_train eliminada (si existía)
+2025-04-05 01:42:58,200 - INFO - Tabla CancerColombia.y_train creada con 165 registros. Tiempo: 3.25s
+2025-04-05 01:42:58,300 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:42:58,407 - INFO - Tabla CancerColombia.X_test eliminada (si existía)
+2025-04-05 01:43:01,479 - INFO - Tabla CancerColombia.X_test creada con 36 registros. Tiempo: 2.98s
+2025-04-05 01:43:01,577 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:43:01,672 - INFO - Tabla CancerColombia.y_test eliminada (si existía)
+2025-04-05 01:43:04,532 - INFO - Tabla CancerColombia.y_test creada con 36 registros. Tiempo: 2.76s
+2025-04-05 01:43:04,631 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:43:04,728 - INFO - Tabla CancerColombia.X_val eliminada (si existía)
+2025-04-05 01:43:07,762 - INFO - Tabla CancerColombia.X_val creada con 36 registros. Tiempo: 2.93s
+2025-04-05 01:43:07,881 - INFO - Esquema CancerColombia verificado
+2025-04-05 01:43:08,016 - INFO - Tabla CancerColombia.y_val eliminada (si existía)
+2025-04-05 01:43:10,868 - INFO - Tabla CancerColombia.y_val creada con 36 registros. Tiempo: 2.75s
+2025-04-05 01:43:10,869 - INFO - Proceso ETL completado exitosamente
