@@ -30,7 +30,15 @@ La aplicación puede consultarse en: https://uao-my.sharepoint.com/:u:/g/persona
 
 ## FUENTES
 Se cuenta con un dataset principal que resalta resultados propios de Colombia y otro dataset complementario además de fuentes de información consolidadas, que permitirán obtener el contexto internacional sobre el que se deberá comparar el dataset principal. 
-| Dataset | Descripción | Disponible en |
+
+| DATASET | Descripción | Enlace |
+| --- | --- | --- |
+| Datos Colombia | Datos abiertos de Colombia | [Enlace 1](https://datos.cali.gov.co/de/dataset/bc8d6ae5-bf36-478f-97f3-42998ab5487f/resource/7490bc07-87bd-4457-b18d-faa5f47eeaf9) |
+| Datos EEUU | datos sobre mamografías en EEUU | [Enlace 2](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) |
+
+
+
+| Elemento | Descripción | Enlace |
 | --- | --- | --- |
 | Repositorio | Enlace al repositorio GitHub | [Enlace 1](https://github.com/jonathandzrtg/Breast_Cancer/tree/main) |
 | Datalake | Datalake donde se almacenan los datos utilizados | [Enlace 2](https://portal.azure.com/#@uao.edu.co/resource/subscriptions/59597407-4315-4383-9580-291cd449d59a/resourceGroups/gr-etl-uao/providers/Microsoft.Storage/storageAccounts/azdletluao/overview) |
